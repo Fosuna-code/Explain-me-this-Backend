@@ -3,6 +3,7 @@ import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-d
 dotenv.config({debug:true})
 // console.log(process.env.openaikey2)
 import { Configuration, OpenAIApi } from "openai";
+// const { Configuration, OpenAIApi } = require("openai");
 
 
 const configuration = new Configuration({
