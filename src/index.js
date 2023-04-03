@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config();
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 import { prompt } from './openai.js';
@@ -13,7 +15,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 // import morgan from 'morgan';
 
-
+const PORT = process.env.PORT || 10001;
 
 // defining the Express app
 const app = express();
@@ -45,6 +47,6 @@ app.get('/', (req, res) => {
 });
 
 // starting the server
-app.listen(3005, () => {
-  console.log('listening on port 3001');
+app.listen(PORT, () => {
+  console.log(`listening on port: ${PORT}`);
 });
