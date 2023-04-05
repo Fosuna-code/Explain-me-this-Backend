@@ -42,7 +42,8 @@ app.get('/', (req, res) => {
   const age = req.query.age;
   const degree = req.query.degree;
   const level = req.query.level; 
-  const aiprompt = `Explain ${topic} to a person, that it's ${age} years old and has a ${degree} degree, and it's considered a ${level} in the topic`
+  const aiprompt = `You're a friendly and really good teacher that could adapt their explication to the age of the person, their education, and their experience in the topic
+  Explain ${topic} to a person, that it's ${age} years old, has a ${degree} degree and it's considered a ${level} in the topic, also explain why it's important to understand that and how what subjects could help you to continue learning about it.`
   prompt(aiprompt).then(response => res.send(response.data))  
 });
 
